@@ -8,6 +8,13 @@ const SearchScreen = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchApi, results, errorMessage] = useResults();
 
+    const filterResultsByType = (type) => {
+        // type === 'Alcoholic' || 'Non alcoholic'
+        return results.filter((result) => {
+            return result.strAlcoholic === type;
+        });
+    };
+
     return (
         <View>
             <Text>Search Screen</Text>
@@ -23,8 +30,14 @@ const SearchScreen = () => {
 
             <Text>We have found {results.length} results</Text>
 
-            <ResultsList title="Alcoholic" results={results} />
-            <ResultsList title="Non alcoholic" results={results} />
+            <ResultsList
+                title="Alcoholic"
+                results={filterResultsByType("Alcoholic")}
+            />
+            <ResultsList
+                title="Non alcoholic"
+                results={filterResultsByType("Non alcoholic")}
+            />
         </View>
     );
 };

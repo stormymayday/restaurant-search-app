@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 
 const ResultsList = ({ title, results }) => {
-    console.log(results);
+    // console.log(results);
 
     return (
         <View>
@@ -11,9 +11,9 @@ const ResultsList = ({ title, results }) => {
                 renderItem={(element) => {
                     const { item } = element;
 
-                    console.log(`Item ${item.idDrink}`);
+                    // console.log(`Item ${item.idDrink}`);
 
-                    return <Text>Drink</Text>;
+                    return <Text>{item.strDrink}</Text>;
                 }}
             />
         </View>
