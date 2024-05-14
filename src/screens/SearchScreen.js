@@ -35,6 +35,10 @@ const SearchScreen = () => {
                 results={filterResultsByType("Alcoholic")}
             />
             <ResultsList
+                title="Optional alcohol"
+                results={filterResultsByType("Optional alcohol")}
+            />
+            <ResultsList
                 title="Non alcoholic"
                 results={filterResultsByType("Non alcoholic")}
             />
