@@ -1,19 +1,21 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
+import ResultsDetail from "./ResultsDetail";
 
 const ResultsList = ({ title, results }) => {
-    // console.log(results);
-
     return (
         <View>
             <Text style={styles.title}>{title}</Text>
             <FlatList
+                horizontal={true}
                 data={results}
-                renderItem={(element) => {
-                    const { item } = element;
+                keyExtractor={(result) => {
+                    // console.log(result.idDrink);
+                    return result.idDrink;
+                }}
+                renderItem={({ item }) => {
+                    const { strDrink } = item;
 
-                    // console.log(`Item ${item.idDrink}`);
-
-                    return <Text>{item.strDrink}</Text>;
+                    return <ResultsDetail result={item} />;
                 }}
             />
         </View>
