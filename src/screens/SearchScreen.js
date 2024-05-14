@@ -17,7 +17,6 @@ const SearchScreen = () => {
 
     return (
         <View>
-            <Text>Search Screen</Text>
             <SearchBar
                 searchTerm={searchTerm}
                 onSearchTermChange={setSearchTerm}
@@ -28,7 +27,7 @@ const SearchScreen = () => {
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
 
-            <Text>We have found {results.length} results</Text>
+            {/* <Text>We have found {results.length} results</Text> */}
 
             <ResultsList
                 title="Alcoholic"
