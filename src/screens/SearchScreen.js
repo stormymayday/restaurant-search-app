@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
@@ -29,18 +29,20 @@ const SearchScreen = () => {
 
             {/* <Text>We have found {results.length} results</Text> */}
 
-            <ResultsList
-                title="Alcoholic"
-                results={filterResultsByType("Alcoholic")}
-            />
-            <ResultsList
-                title="Optional alcohol"
-                results={filterResultsByType("Optional alcohol")}
-            />
-            <ResultsList
-                title="Non alcoholic"
-                results={filterResultsByType("Non alcoholic")}
-            />
+            <ScrollView>
+                <ResultsList
+                    title="Alcoholic"
+                    results={filterResultsByType("Alcoholic")}
+                />
+                <ResultsList
+                    title="Optional alcohol"
+                    results={filterResultsByType("Optional alcohol")}
+                />
+                <ResultsList
+                    title="Non alcoholic"
+                    results={filterResultsByType("Non alcoholic")}
+                />
+            </ScrollView>
         </View>
     );
 };
