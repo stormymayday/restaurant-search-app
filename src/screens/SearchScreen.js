@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
+import ResultsList from "../components/ResultsList";
 
 const SearchScreen = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -12,19 +13,18 @@ const SearchScreen = () => {
             <Text>Search Screen</Text>
             <SearchBar
                 searchTerm={searchTerm}
-                // onSearchTermChange={(newSearchTerm) => {
-                //     setSearchTerm(newSearchTerm);
-                // }}
                 onSearchTermChange={setSearchTerm}
                 onTermSubmit={() => {
                     searchApi(searchTerm);
                 }}
-                // onTermSubmit={searchApi}
             />
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
 
             <Text>We have found {results.length} results</Text>
+
+            <ResultsList title="Alcoholic" results={results} />
+            <ResultsList title="Non alcoholic" results={results} />
         </View>
     );
 };
