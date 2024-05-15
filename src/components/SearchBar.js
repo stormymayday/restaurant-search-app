@@ -9,6 +9,7 @@ const SearchBar = ({ searchTerm, onSearchTermChange, onTermSubmit }) => {
                 autoCapitalize="none"
                 autoCorrect={false}
                 placeholder="Search"
+                placeholderTextColor="#CCCCCC"
                 style={styles.inputStyle}
                 value={searchTerm}
                 onChangeText={onSearchTermChange}
@@ -21,12 +22,11 @@ const SearchBar = ({ searchTerm, onSearchTermChange, onTermSubmit }) => {
 const styles = StyleSheet.create({
     backgroundStyle: {
         marginTop: 10,
-        // backgroundColor: "#f0EEEE",
-        backgroundColor: "#f0EEFF",
-        // backgroundColor: "gray",
+        backgroundColor: "#a1a1a1",
         height: 50,
         borderRadius: 5,
         marginHorizontal: 15,
+        marginBottom: 10,
         flexDirection: "row",
     },
     iconStyle: {
