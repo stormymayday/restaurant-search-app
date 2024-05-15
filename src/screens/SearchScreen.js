@@ -35,14 +35,17 @@ const SearchScreen = (props) => {
                         <ResultsList
                             title="Alcoholic"
                             results={filterResultsByType("Alcoholic")}
+                            navigation={navigation}
                         />
                         <ResultsList
                             title="Optional alcohol"
                             results={filterResultsByType("Optional alcohol")}
+                            navigation={navigation}
                         />
                         <ResultsList
                             title="Non alcoholic"
                             results={filterResultsByType("Non alcoholic")}
+                            navigation={navigation}
                         />
                     </ScrollView>
                 </>
