@@ -48,7 +48,7 @@ export default () => {
 
     // Calling searchApi once when component is first rendered
     useEffect(() => {
-        searchApi("a");
+        searchApi("");
     }, []);
 
     return [searchApi, results, errorMessage];
