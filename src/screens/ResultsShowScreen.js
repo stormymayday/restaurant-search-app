@@ -6,7 +6,6 @@ const ResultsShowScreen = (props) => {
     const { navigation } = props;
     const id = navigation.getParam("id");
     const [result, setResult] = useState(null);
-    const [ingredients, setIngredients] = useState([]);
 
     const getResult = async (id) => {
         try {
