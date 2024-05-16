@@ -9,34 +9,33 @@ import ResultsDetail from "./ResultsDetail";
 import { withNavigation } from "react-navigation";
 
 const ResultsList = ({ title, results, navigation }) => {
+    if (!results.length) {
+        return null;
+    }
     return (
         <View style={styles.container}>
-            {results.length > 0 ? (
-                <>
-                    <Text style={styles.title}>{title}</Text>
-                    <FlatList
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                        data={results}
-                        keyExtractor={(result) => {
-                            return result.idDrink;
-                        }}
-                        renderItem={({ item }) => {
-                            return (
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        navigation.navigate("ResultsShow", {
-                                            id: item.idDrink,
-                                        });
-                                    }}
-                                >
-                                    <ResultsDetail result={item} />
-                                </TouchableOpacity>
-                            );
-                        }}
-                    />
-                </>
-            ) : null}
+            <Text style={styles.title}>{title}</Text>
+            <FlatList
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                data={results}
+                keyExtractor={(result) => {
+                    return result.idDrink;
+                }}
+                renderItem={({ item }) => {
+                    return (
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate("ResultsShow", {
+                                    id: item.idDrink,
+                                });
+                            }}
+                        >
+                            <ResultsDetail result={item} />
+                        </TouchableOpacity>
+                    );
+                }}
+            />
         </View>
     );
 };
